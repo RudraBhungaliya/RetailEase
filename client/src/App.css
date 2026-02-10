@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+	color-scheme: light;
+	--bg-body: #ffffff;
+	--bg-secondary: #f5f5f5;
+	--bg-card: #ffffff;
+	--text-main: #000000;
+	--text-muted: #666666;
+	--text-secondary: #888888;
+
+	--nav-bg: #131921;
+	--nav-text: #ffffff;
+	--nav-text-muted: #cccccc;
+
+	--accent: #FF9900;
+	--accent-hover: #FF8600;
+	--accent-text: #000000;
+
+	--border-light: #e0e0e0;
+	--border-accent: 2px solid #FF9900;
+	--shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+	--shadow-accent: 0 4px 12px rgba(255, 153, 0, 0.2);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Space Grotesk", "Segoe UI", sans-serif;
+	background: var(--bg-body);
+	color: var(--text-main);
+}
+
+/* Navbar - Amazon Style */
+.nav-shell {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	padding: 0;
+	background: var(--nav-bg);
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-glow {
+	display: none;
+}
+
+.nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	height: 64px;
+	padding: 0 24px;
+	background: transparent;
+	color: var(--nav-text);
+	max-width: 1400px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.nav-brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: var(--nav-text);
+	min-width: fit-content;
+	transition: all 0.3s ease;
+}
+
+.nav-brand:hover {
+	color: var(--accent);
+}
+
+.brand-mark {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background: var(--accent);
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.brand-copy {
+	display: grid;
+	line-height: 1.2;
+}
+
+.brand-name {
+	font-family: "DM Serif Display", serif;
+	font-size: 24px;
+	letter-spacing: 0.5px;
+	font-weight: 400;
+}
+
+.brand-tag {
+	font-size: 10px;
+	color: var(--accent);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.nav-links {
+	display: flex;
+	gap: 32px;
+	align-items: center;
+	flex: 1;
+	justify-content: center;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: var(--nav-text-muted);
+	font-size: 14px;
+	font-weight: 500;
+	padding: 8px 12px;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.nav-link:hover {
+	color: var(--nav-text);
+	background: rgba(255, 153, 0, 0.1);
+}
+
+.nav-link-active {
+	color: var(--accent);
+	font-weight: 700;
+	background: rgba(255, 153, 0, 0.1);
+	border: 1px solid var(--accent);
+}
+
+.nav-actions {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-left: auto;
+}
+
+/* User Menu */
+.user-menu {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.user-name {
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--nav-text);
+}
+
+.auth-btn {
+	padding: 10px 20px;
+	border-radius: 8px;
+	border: none;
+	font-weight: 600;
+	font-size: 13px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.login-btn {
+	background: var(--accent);
+	color: #fff;
+	box-shadow: 0 2px 4px rgba(255, 153, 0, 0.2);
+}
+
+.login-btn:hover {
+	transform: translateY(-2px);
+	background: var(--accent-hover);
+	box-shadow: 0 4px 8px rgba(255, 153, 0, 0.3);
+}
+
+.logout-btn {
+	background: transparent;
+	color: var(--nav-text);
+	border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.logout-btn:hover {
+	border-color: #fff;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+
+/* General Layout Utils */
+.page-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* Common Card Styles */
+.card {
+	background: var(--bg-card);
+	border: 1px solid var(--border-light);
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: var(--shadow-card);
+	transition: all 0.3s ease;
+}
+
+.card:hover {
+	border-color: var(--accent);
+	box-shadow: var(--shadow-accent);
+	transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.nav-links {
+		gap: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.nav-bar {
+		padding: 0 16px;
+		height: 56px;
+	}
+
+	.nav-links {
+		display: none;
+	}
+
+	.nav-brand {
+		flex: 1;
+	}
+
+	.brand-name {
+		font-size: 18px;
+	}
+
+	.brand-copy {
+		line-height: 1;
+	}
+
+	.brand-tag {
+		display: none;
+	}
+
+	.user-name {
+		display: none;
+	}
+}
