@@ -1,19 +1,25 @@
 import { useState } from "react";
 
-const products = [
-  { id: 1, name: "Wireless Headphones", price: 4999, category: "Electronics", rating: 4.5 },
-  { id: 2, name: "Coffee Maker", price: 2999, category: "Home & Kitchen", rating: 4.3 },
-  { id: 3, name: "Running Shoes", price: 1499, category: "Sports", rating: 4.7 },
-  { id: 4, name: "Cricket Bat", price: 6999, category: "Sports", rating: 4.6 },
-  { id: 5, name: "Smart Watch", price: 5499, category: "Electronics", rating: 4.4 },
-  { id: 6, name: "Yoga Mat", price: 7999, category: "Sports", rating: 4.5 },
-  { id: 7, name: "Python Programming Book", price: 499, category: "Books", rating: 4.8 },
-  { id: 8, name: "Toy Robot", price: 1999, category: "Toys", rating: 4.2 }
+const initialProducts = [
+  { id: "P001", name: "Wireless Headphones", costPrice: 3500, sellPrice: 4999, category: "Electronics", stock: 45, threshold: 10, barcode: "WH001" },
+  { id: "P002", name: "Coffee Maker", costPrice: 2000, sellPrice: 2999, category: "Home & Kitchen", stock: 5, threshold: 10, barcode: "CM002" },
+  { id: "P003", name: "Running Shoes", costPrice: 800, sellPrice: 1499, category: "Sports", stock: 23, threshold: 15, barcode: "RS003" },
+  { id: "P004", name: "Cricket Bat", costPrice: 4500, sellPrice: 6999, category: "Sports", stock: 12, threshold: 8, barcode: "CB004" },
+  { id: "P005", name: "Smart Watch", costPrice: 3800, sellPrice: 5499, category: "Electronics", stock: 3, threshold: 10, barcode: "SW005" },
+  { id: "P006", name: "Yoga Mat", costPrice: 5500, sellPrice: 7999, category: "Sports", stock: 18, threshold: 12, barcode: "YM006" },
+  { id: "P007", name: "Python Programming Book", costPrice: 300, sellPrice: 499, category: "Books", stock: 30, threshold: 20, barcode: "PB007" },
+  { id: "P008", name: "Toy Robot", costPrice: 1200, sellPrice: 1999, category: "Toys", stock: 7, threshold: 15, barcode: "TR008" }
 ];
 
 export default function ProductPage() {
-  const [cart, setCart] = useState([]);
+  const [products, setProducts] = useState(initialProducts);
   const [filter, setFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [editingProduct, setEditingProduct] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "", costPrice: "", sellPrice: "", category: "", stock: "", threshold: "", barcode: ""
+  });
 
   const add = p => setCart([...cart, p]);
   const remove = i => setCart(cart.filter((_, x) => x !== i));

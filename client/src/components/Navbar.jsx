@@ -2,11 +2,11 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "Products", to: "/productPage" },
-  { label: "Wishlist", to: "/wishlist" },
+  { label: "Dashboard", to: "/" },
+  { label: "Inventory", to: "/inventory" },
   { label: "Orders", to: "/orders" },
-  { label: "Support", to: "/support" }
+  { label: "Customers", to: "/customers" },
+  { label: "Reports", to: "/reports" }
 ];
 
 export default function Navbar() {

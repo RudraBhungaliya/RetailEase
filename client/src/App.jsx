@@ -5,11 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // pages
 import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
-import ProductPage from "./pages/ProductsPage.jsx";
+import InventoryPage from "./pages/InventoryPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import OrdersPage from "./pages/OrdersPage.jsx";
-import WishlistPage from "./pages/WishlistPage.jsx";
-import SupportPage from "./pages/SupportPage.jsx";
+import CustomersPage from "./pages/CustomersPage.jsx";
+import ReportsPage from "./pages/ReportsPage.jsx";
 
 // components
 import Navbar from "./components/Navbar.jsx";
@@ -26,11 +26,11 @@ export default function App() {
       ),
     },
     {
-      path: "/productPage",
+      path: "/inventory",
       element: (
         <>
           <Navbar />
-          <ProductPage />
+          <InventoryPage />
         </>
       ),
     },
@@ -44,20 +44,20 @@ export default function App() {
       ),
     },
     {
-      path: "/wishlist",
+      path: "/customers",
       element: (
         <>
           <Navbar />
-          <WishlistPage />
+          <CustomersPage />
         </>
       ),
     },
     {
-      path: "/support",
+      path: "/reports",
       element: (
         <>
           <Navbar />
-          <SupportPage />
+          <ReportsPage />
         </>
       ),
     },
