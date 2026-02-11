@@ -3,8 +3,7 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // pages
-import LoginPage from "./pages/LoginPage.jsx";
-import SignUpPage from "./pages/SignUpPage.jsx";
+import AuthPage from "./pages/AuthPage.jsx";
 import InventoryPage from "./pages/InventoryPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import OrdersPage from "./pages/OrdersPage.jsx";
@@ -66,7 +65,7 @@ export default function App() {
       element: (
         <>
           <Navbar />
-          <LoginPage />
+          <AuthPage />
         </>
       ),
     },
@@ -75,7 +74,7 @@ export default function App() {
       element: (
         <>
           <Navbar />
-          <SignUpPage />
+          <AuthPage />
         </>
       ),
     },
